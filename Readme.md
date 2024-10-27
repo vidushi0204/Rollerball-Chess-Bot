@@ -2,7 +2,8 @@ Rollerball Chess Bot as part of Artificial Intelligence course, IIT Delhi (2023-
 
 ## Objective
 
-The goal of the project is to develop a bot that competes in the game of Rollerball across three different board configurations. Rollerball is a turn-based game similar to chess, where the objective is to checkmate the opponent's king. The bot must efficiently handle game strategies for three distinct board setups and compete against other bots in a tournament format. 
+The goal of the project is to develop a bot that competes in the game of Rollerball across three different board configurations for an in-class tournament. Rollerball is a turn-based game similar to chess, where the objective is to checkmate the opponent's king. The bot must efficiently handle game strategies for three distinct board setups and compete against other bots in a tournament format. 
+Rollerball's GUI is implemented in JavaScript, and the core engine is written in C++. 
 
 ## Game Overview
 
@@ -58,3 +59,19 @@ In the endgame, when fewer pieces remain on the board, we employ specialized str
 - **Aggressive King Attack**: If the opponent's king is vulnerable, we aggressively search for checkmate opportunities.
 - **Piece Preservation**: If winning is not possible, we focus on preserving valuable pieces to maximize our margin score.
 
+# Using the BOT
+To run the GUI, launch a web server from the `web` directory.
+
+```bash
+cd web
+python3 -m http.server 8080
+```
+
+You can then open [localhost:8080](http://localhost:8080) on your browser to view the GUI. Here you can select one of the three board types. 
+
+To launch the bots (assuming you're in the directory)
+
+```bash
+./bin/rollerball -p 8181
+```
+You can then connect the GUI to the bots. You would also need to start another bot for black on port 8182 to join and start the game.
